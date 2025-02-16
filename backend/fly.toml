@@ -4,7 +4,7 @@
 #
 
 app = 'backend-ancient-log-8622'
-primary_region = 'sjc'
+primary_region = 'ord'
 
 [build]
 
@@ -17,6 +17,4 @@ primary_region = 'sjc'
   processes = ['app']
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
-  cpus = 1
+  size = 'a10'

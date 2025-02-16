@@ -71,17 +71,17 @@ const AddItem = ({ isOpen, onClose }: AddItemProps) => {
       >
         <ModalOverlay />
         <ModalContent as="form" onSubmit={handleSubmit(onSubmit)}>
-          <ModalHeader>Add Item</ModalHeader>
+          <ModalHeader>Add Video</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl isRequired isInvalid={!!errors.title}>
-              <FormLabel htmlFor="title">Title</FormLabel>
+              <FormLabel htmlFor="title">URL</FormLabel>
               <Input
                 id="title"
                 {...register("title", {
                   required: "Title is required.",
                 })}
-                placeholder="Title"
+                placeholder="https://..."
                 type="text"
               />
               {errors.title && (

@@ -1,3 +1,5 @@
+#/bin/zsh
+
 while IFS= read -r line; do
-  if [[ $line != '#'* ]] fly secrets set "$line"
+  if [[ $line == 'POST'* ]] fly secrets set "$line"
 done <.env
