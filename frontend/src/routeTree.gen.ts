@@ -11,6 +11,7 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as VideoImport } from './routes/video'
 import { Route as SignupImport } from './routes/signup'
 import { Route as ResetPasswordImport } from './routes/reset-password'
 import { Route as RecoverPasswordImport } from './routes/recover-password'
@@ -22,6 +23,11 @@ import { Route as LayoutItemsImport } from './routes/_layout/items'
 import { Route as LayoutAdminImport } from './routes/_layout/admin'
 
 // Create/Update Routes
+
+const VideoRoute = VideoImport.update({
+  path: '/video',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const SignupRoute = SignupImport.update({
   path: '/signup',
@@ -92,6 +98,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignupImport
       parentRoute: typeof rootRoute
     }
+    '/video': {
+      preLoaderRoute: typeof VideoImport
+      parentRoute: typeof rootRoute
+    }
     '/_layout/admin': {
       preLoaderRoute: typeof LayoutAdminImport
       parentRoute: typeof LayoutImport
@@ -124,6 +134,7 @@ export const routeTree = rootRoute.addChildren([
   RecoverPasswordRoute,
   ResetPasswordRoute,
   SignupRoute,
+  VideoRoute,
 ])
 
 /* prettier-ignore-end */

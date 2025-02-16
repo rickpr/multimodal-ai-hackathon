@@ -8,7 +8,8 @@ import { StrictMode } from "react"
 import { OpenAPI } from "./client"
 import theme from "./theme"
 
-OpenAPI.BASE = import.meta.env.VITE_API_URL
+// OpenAPI.BASE = import.meta.env.VITE_API_URL // TODO: WTF
+OpenAPI.BASE = "https://backend-ancient-log-8622.fly.dev"
 OpenAPI.TOKEN = async () => {
   return localStorage.getItem("access_token") || ""
 }
